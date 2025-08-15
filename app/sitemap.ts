@@ -1,66 +1,58 @@
 import type { MetadataRoute } from "next"
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // 定义基础域名，方便统一管理
+  const baseUrl = "https://unterschriftgenerator.pro";
+
   return [
     {
-      url: "https://unterschrift-generator.de",
+      url: baseUrl,
       lastModified: new Date(),
       changeFrequency: "daily",
       priority: 1,
     },
     {
-      url: "https://unterschrift-generator.de/ratgeber",
+      url: `${baseUrl}/ratgeber`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
-      url: "https://unterschrift-generator.de/impressum",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.3,
-    },
-    {
-      url: "https://unterschrift-generator.de/datenschutz",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.3,
-    },
-    {
-      url: "https://unterschriftgenerator.pro",
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 1,
-    },
-    {
-      url: "https://unterschriftgenerator.pro/ratgeber",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: "https://unterschriftgenerator.pro/ueber-uns",
+      url: `${baseUrl}/ueber-uns`, // über-uns 页面
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
-      url: "https://unterschriftgenerator.pro/kontakt",
+      url: `${baseUrl}/kontakt`, // kontakt 页面
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: "https://unterschriftgenerator.pro/datenschutzrichtlinie",
+      url: `${baseUrl}/datenschutzrichtlinie`, // datenschutzrichtlinie 页面
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.4,
     },
     {
-      url: "https://unterschriftgenerator.pro/nutzungsbedingungen",
+      url: `${baseUrl}/nutzungsbedingungen`, // nutzungsbedingungen 页面
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.4,
     },
+    // 以下是旧域名对应的页面，也指向新域名
+    {
+      url: `${baseUrl}/impressum`, // impressum 页面
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.3,
+    },
+    {
+        url: `${baseUrl}/datenschutz`, // datenschutz 页面 (假设它和 datenschutzrichtlinie 是同一个或需要重定向)
+        lastModified: new Date(),
+        changeFrequency: "monthly",
+        priority: 0.3,
+      },
   ]
 }
