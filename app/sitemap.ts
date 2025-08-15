@@ -1,5 +1,8 @@
 import type { MetadataRoute } from "next"
 
+// 👇 在这里添加这行代码
+export const dynamic = 'force-static'
+
 export default function sitemap(): MetadataRoute.Sitemap {
   // 定义基础域名，方便统一管理
   const baseUrl = "https://unterschriftgenerator.pro";
